@@ -7,7 +7,7 @@
 # Specify Kernel Directory
 KERNEL_DIR="$(pwd)"
 
-git submodule update --init --recursive --remote
+# git submodule update --init --recursive --remote
 
 ##----------------------------------------------------------##
 # Device Name and Model
@@ -127,7 +127,7 @@ function zipping() {
         echo "Zip: $ZIPNAME"
         # curl -T $ZIPNAME temp.sh; echo
         curl -T $ZIPNAME https://oshi.at
-        # curl --upload-file $ZIPNAME https://free.keep.sh
+        curl --upload-file $ZIPNAME https://free.keep.sh
     cd ..
     
 }
