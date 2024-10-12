@@ -30,7 +30,7 @@ DATE=$(TZ=Asia/Jakarta date +"%Y%m%d-%T")
 TANGGAL=$(date +"%F%S")
 
 # Specify Final Zip Name
-ZIPNAME="SUPER.KERNEL-SPES-(neutron)-$(TZ=Asia/Jakarta date +"%Y%m%d-%H%M").zip"
+ZIPNAME="SUPER.KERNEL.SPES-(neutron)-$(TZ=Asia/Jakarta date +"%Y%m%d-%H%M").zip"
 
 ##----------------------------------------------------------##
 # Specify compiler.
@@ -127,7 +127,7 @@ function zipping() {
         echo "Zip: $ZIPNAME"
         # curl -T $ZIPNAME temp.sh; echo
         curl -T $ZIPNAME https://oshi.at
-        curl --upload-file $ZIPNAME https://free.keep.sh
+        #curl --upload-file $ZIPNAME https://free.keep.sh
     cd ..
     
 }

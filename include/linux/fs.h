@@ -717,8 +717,11 @@ struct inode {
 
 	void			*i_private; /* fs or device private pointer */
 
-	ANDROID_KABI_RESERVE(1);
-	ANDROID_KABI_RESERVE(2);
+#ifdef CONFIG_KSU_SUSFS
+	u64 android_kabi_reserved1;
+	u64 android_kabi_reserved2;
+#endif
+
 } __randomize_layout;
 
 static inline unsigned int i_blocksize(const struct inode *node)
@@ -1531,10 +1534,12 @@ struct super_block {
 	spinlock_t		s_inode_wblist_lock;
 	struct list_head	s_inodes_wb;	/* writeback inodes */
 
-	ANDROID_KABI_RESERVE(1);
-	ANDROID_KABI_RESERVE(2);
-	ANDROID_KABI_RESERVE(3);
-	ANDROID_KABI_RESERVE(4);
+#ifdef CONFIG_KSU_SUSFS
+	u64 android_kabi_reserved1;
+	u64 android_kabi_reserved2;
+	u64 android_kabi_reserved3;
+#endif
+
 } __randomize_layout;
 
 /* Helper functions so that in most cases filesystems will

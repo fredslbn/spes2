@@ -44,6 +44,10 @@ struct user_struct {
 	atomic_long_t locked_vm;
 #endif
 
+#ifdef CONFIG_KSU_SUSFS
+	u64 android_kabi_reserved1;
+#endif
+
 	/* Miscellaneous per-user rate limit */
 	struct ratelimit_state ratelimit;
 };
